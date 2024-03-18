@@ -72,7 +72,6 @@ Open the Windows Control Panel.
 
 ![Screenshot 2024-03-18 230312](https://github.com/Nagakumar2402/react-native/assets/31985534/31c9d412-bcb6-4f0a-9ce3-2d9c9bb7e17e)
 
-
 ## Creating a new application
 
 If you previously installed a global `react-native-cli` package, please remove it as it may cause unexpected issues:
@@ -124,3 +123,21 @@ npm run android
 If everything is set up correctly, you should see your new app running in your Android emulator shortly.
 
 ![Image](https://www.valuebound.com/sites/default/files/inline-images/running_app_on_emulator.jpg)
+
+> Necessary configurations for your Android project must add below two link of code
+
+1. **Add a line to `gradle.properties` file:**
+   Open the `gradle.properties` file located in the `android` directory of your project. If it doesn't exist, create one. Add the following line to this file:
+
+   ```cmd
+   org.gradle.warning.mode=all
+   ```
+
+   This line enables all warnings for Gradle.
+
+2. **Create `local.properties` file:**
+   Inside your project's `android` directory, create a new file named `local.properties`. Open this file and add the following line:
+   ```cmd
+   sdk.dir=C:\\Users\\<YourUserName>\\AppData\\Local\\Android\\Sdk
+   ```
+   Replace `<YourUserName>` with your actual Windows username. This line specifies the path to your Android SDK installation directory.
