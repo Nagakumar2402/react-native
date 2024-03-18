@@ -49,7 +49,8 @@ Open the Windows Control Panel.
 1. Click on User Accounts, then click User Accounts again
 2. Click on Change my environment variables
 3. Click on New... to create a new ANDROID_HOME user variable that points to the path to your Android SDK:
-   ![alt text](image-1.png)
+   ![image](https://github.com/Nagakumar2402/react-native/assets/31985534/e63d94bc-b0a1-4840-a3b5-afdb4353e103)
+
    The SDK is installed, by default, at the following location:
 
 ```cmd
@@ -69,7 +70,8 @@ Open the Windows Control Panel.
 
 ### 5. Configure the JAVA_HOME environment variable
 
-![alt text](image.png)
+![Screenshot 2024-03-18 230312](https://github.com/Nagakumar2402/react-native/assets/31985534/31c9d412-bcb6-4f0a-9ce3-2d9c9bb7e17e)
+
 
 ## Creating a new application
 
