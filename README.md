@@ -124,7 +124,7 @@ If everything is set up correctly, you should see your new app running in your A
 
 ![Image](https://www.valuebound.com/sites/default/files/inline-images/running_app_on_emulator.jpg)
 
-> Necessary configurations for your Android project must add below two link of code
+> **Note** Necessary configurations for your Android project must add below two link of code
 
 1. **Add a line to `gradle.properties` file:**
    Open the `gradle.properties` file located in the `android` directory of your project. If it doesn't exist, create one. Add the following line to this file:
