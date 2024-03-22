@@ -4,15 +4,8 @@ import Header from '../components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
 const Search = () => {
   const [city, setCity] = useState('');
-  const [cities, setCities] = useState([]);
-  const fetchCites = text => {
-    setCity(text);
-    fetch('https://autocomplete.wunderground.com/aq?query=' + text)
-      .then(item => item.json())
-      .then(cityData => {
-        console.log(cityData);
-      });
-  };
+  console.log(city);
+
   return (
     <View>
       <Header />
@@ -22,7 +15,7 @@ const Search = () => {
           label="city name"
           placeholder="City Name"
           value={city}
-          onChangeText={text => fetchCites(text)}
+          onChangeText={text => setCity(text)}
         />
 
         <Button style={styles.btn} title="search" onPress={{}} />
