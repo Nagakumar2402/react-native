@@ -2,7 +2,8 @@ import {Image, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import axios from 'axios';
 import Header from '../components/Header';
-const Home = () => {
+const Home = props => {
+  const [load, setLoad] = React.useState(false);
   const [info, setInfo] = React.useState({
     temp: 'loading..',
     description: 'loading..',
@@ -12,9 +13,11 @@ const Home = () => {
   React.useEffect(() => {
     getWeather();
   }, []);
-
-  const MyCity = 'visakhapatnam',
-    APIkey = 'f738629a362bfb615e811eeeda4f40a1';
+  const {city} = props.route.params;
+  console.log(city);
+  const MyCity = city;
+  console.log(city);
+  APIkey = 'f738629a362bfb615e811eeeda4f40a1';
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${MyCity}&appid=${APIkey}&units=metric`;
 
   const getWeather = async () => {
@@ -28,7 +31,6 @@ const Home = () => {
       });
     } catch (error) {
       console.log(error.message);
-      s;
     }
   };
 

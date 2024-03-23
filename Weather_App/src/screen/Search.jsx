@@ -2,10 +2,8 @@ import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 import Header from '../components/Header';
 import Icon from 'react-native-vector-icons/FontAwesome';
-const Search = () => {
+const Search = props => {
   const [city, setCity] = useState('');
-  console.log(city);
-
   return (
     <View>
       <Header />
@@ -18,7 +16,11 @@ const Search = () => {
           onChangeText={text => setCity(text)}
         />
 
-        <Button style={styles.btn} title="search" onPress={{}} />
+        <Button
+          style={styles.btn}
+          title="search"
+          onPress={() => props.navigation.navigate('Home', {city: city})}
+        />
       </View>
     </View>
   );
