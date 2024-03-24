@@ -1,26 +1,27 @@
-import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
+import {Button, StyleSheet, TextInput, View} from 'react-native';
 import React, {useState} from 'react';
 import Header from '../components/Header';
-import Icon from 'react-native-vector-icons/FontAwesome';
+
 const Search = props => {
   const [city, setCity] = useState('');
+
+  const handleSearch = () => {
+    const trimmedCity = city.trim();
+    props.navigation.navigate('Home', {city: trimmedCity});
+    setCity('');
+  };
+
   return (
     <View>
       <Header />
       <View style={{paddingHorizontal: 5}}>
         <TextInput
           style={styles.input}
-          label="city name"
           placeholder="City Name"
           value={city}
           onChangeText={text => setCity(text)}
         />
-
-        <Button
-          style={styles.btn}
-          title="search"
-          onPress={() => props.navigation.navigate('Home', {city: city})}
-        />
+        <Button style={styles.btn} title="Search" onPress={handleSearch} />
       </View>
     </View>
   );
@@ -37,6 +38,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
     fontSize: 20,
-    textTransform: 'capitalize',
   },
 });

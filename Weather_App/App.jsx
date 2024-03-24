@@ -1,12 +1,18 @@
 import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import Search from './src/screen/Search';
 import Home from './src/screen/Home';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import IonIcons from 'react-native-vector-icons/Ionicons';
+import SplashScreen from 'react-native-splash-screen';
 const Tab = createBottomTabNavigator();
 const App = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 900);
+  }, []);
   return (
     <>
       <StatusBar backgroundColor="#00aaff" barStyle="dark-content" />
@@ -27,6 +33,7 @@ const App = () => {
 
             tabBarActiveTintColor: '#00aaff',
             tabBarInactiveTintColor: 'gray',
+            headerShown: false,
           })}>
           <Tab.Screen
             name="Home"
