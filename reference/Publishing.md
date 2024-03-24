@@ -23,7 +23,7 @@ MYAPP_UPLOAD_KEY_PASSWORD=*****
 ## Adding signing config to your app's Gradle config
 
 The last configuration step that needs to be done is to setup release builds to be signed using upload key. Edit the file  `android/app/build.gradle`  in your project folder, and add the signing config,
-```
+```gradle
 android {
     ...
     defaultConfig { ... }
